@@ -1,36 +1,53 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CyberLiga</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src = "js/darkmode.js"></script>
+    <script src="js/darkmode.js" defer></script>
+    <style>
+        /* Стили для темного режима */
+        body.dark-mode {
+            background-color: #1a1a1a;
+            color: #ffffff;
+        }
+        .dark-mode .bg-white { background-color: #333333; }
+        .dark-mode .text-gray-700 { color: #e0e0e0; }
+        .dark-mode .text-gray-900 { color: #ffffff; }
+        .dark-mode .border-gray-300 { border-color: #555555; }
+        .dark-mode .hover\:bg-gray-100:hover { background-color: #444444; }
+    </style>
 </head>
 <body class="bg-gray-100">
     <header class="bg-white shadow">
-        <div class="container mx-auto flex justify-between items-center py-4 px-6">
-            <div class="flex items-center">
-                <a href="index.html">
-                    <img src="img/logo.png" class="h-10 w-10">
-                </a>
+        <div class="container mx-auto px-6 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <a href="index.html">
+                        <img src="img/logo.png" alt="Logo" class="h-10 w-10">
+                    </a>
+                </div>
+                <nav class="flex space-x-4">
+                    <a href="#" class="text-gray-700 hover:text-gray-900">Discipline</a>
+                    <a href="#" class="text-gray-700 hover:text-gray-900">Tournament list</a>
+                    <a href="#" class="text-gray-700 hover:text-gray-900">Pricing</a>
+                    <a href="#" class="text-gray-700 hover:text-gray-900">Contact</a>
+                    <button onclick="toggleDarkMode()" class="text-gray-700 hover:text-gray-900">Toggle Dark Mode</button>
+                    <a href="signin.html" class="text-gray-700 hover:text-gray-900 border border-gray-300 rounded px-4 py-2">Sign in</a>
+                    <a href="register.html" class="text-white bg-black rounded px-4 py-2">Register</a>
+                    
+                </nav>
             </div>
-            <nav class="flex space-x-4">
-                <a href="#" class="text-gray-700 hover:text-gray-900">Discipline</a>
-                <a href="#" class="text-gray-700 hover:text-gray-900">Tournament list</a>
-                <a href="#" class="text-gray-700 hover:text-gray-900">Pricing</a>
-                <a href="#" class="text-gray-700 hover:text-gray-900">Contact</a>
-                <a href="signin.html" class="text-gray-700 hover:text-gray-900 border border-gray-300 rounded px-4 py-2">Sign in</a>
-                <a href="register.html" class="text-white bg-black rounded px-4 py-2">Register</a>
-                <button onclick="toggleDarkMode()" class="ml-4 text-gray-700 hover:text-gray-900">Toggle Dark Mode</button>
-            </nav>
         </div>
     </header>
-    <main class="flex flex-col items-center justify-center h-screen">
-        <h1 class="text-5xl font-bold text-gray-900">CyberLiga</h1>
-        <p class="text-xl text-gray-500 mt-4">First NSK organizator</p>
-        <button class="mt-6 px-6 py-2 border border-gray-300 rounded text-gray-700 hover:bg-gray-100">
-            <a href="register.html">Register Team</a>
-        </button>
+
+    <main class="container mx-auto mt-6 px-6 h-screen flex flex-col justify-center items-center">
+        <div id="content" class="text-center">
+            <h1 class="text-5xl font-bold text-gray-900 mb-4">CyberLiga</h1>
+            <p class="text-xl text-gray-500 max-w-2xl">First NSK organizer for cybersports tournaments. We provide a platform for gamers to compete, improve their skills, and become part of a growing community of cybersports enthusiasts.</p>
+        </div>
+    </main>
     </main>
 </body>
 </html>
